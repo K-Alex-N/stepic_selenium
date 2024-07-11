@@ -1,4 +1,4 @@
-import unittest
+import pytest
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -22,16 +22,15 @@ def abs(link):
     return msg
 
 
-class TestAbs(unittest.TestCase):
+class TestAbs():
 
     def test_link_ok(self):
         link = "http://suninjuly.github.io/registration1.html"
-        self.assertEqual(abs(link), "Congratulations! You have successfully registered!", "there is no welcome, congrat etc")
+        assert (abs(link), "Congratulations! You have successfully registered!", "there is no welcome, congrat etc")
 
     def test_link_nok(self):
         link = "http://suninjuly.github.io/registration2.html"
-        self.assertEqual(abs(link), "Congratulations! You have successfully registered!", "there is no welcome, congrat etc")
+        assert (abs(link), "Congratulations! You have successfully registered!", "there is no welcome, congrat etc")
 
-
-if __name__ == "__main__":
-    unittest.main()
+# if __name__ == "__main__":
+#     unittest.main()
